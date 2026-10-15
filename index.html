@@ -4,11 +4,107 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>LUX® | Feuerzeuge &amp; Zubehör</title>
+<meta name="description" content="LUX® – Feuerzeuge und Zubehör seit 1984: Motiv- und Designfeuerzeuge, Piezo, Jet-Flame, BBQ, Candle Lite, Hülsen, Papers und Werbefeuerzeuge. Eine Marke der KP Plattner GmbH, erhältlich in Trafiken und Fachgeschäften.">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400&family=Lora:wght@400;500&family=Mulish:wght@400;600;700&display=swap">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Organization",
+   "@id": "#kp-plattner",
+   "name": "KP Plattner GmbH",
+   "email": "office@kp-plattner.at",
+   "telephone": "+43 512 264 064",
+   "url": "https://www.kp-plattner.at",
+   "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Steinbockallee 9",
+    "postalCode": "6063",
+    "addressLocality": "Rum",
+    "addressRegion": "Tirol",
+    "addressCountry": "AT"
+   },
+   "brand": {
+    "@id": "#lux"
+   }
+  },
+  {
+   "@type": "Brand",
+   "@id": "#lux",
+   "name": "LUX®",
+   "alternateName": "LUX",
+   "slogan": "So individuell wie der Moment.",
+   "description": "LUX® ist eine eingetragene Marke der KP Plattner GmbH für Feuerzeuge und Zubehör, seit 1984."
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Wo kann man LUX® Produkte kaufen?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "LUX® Produkte gibt es überwiegend in Tabaktrafiken und Fachgeschäften in Österreich und Deutschland sowie in vielen weiteren Ländern Europas. Auf dieser Website selbst werden keine Produkte verkauft."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Wer steht hinter der Marke LUX®?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "LUX® ist eine eingetragene Marke der KP Plattner GmbH mit Sitz in Rum bei Innsbruck (Tirol, Österreich). Die Marke gibt es seit 1984."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Wie kann ich LUX® Händler werden?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Händler beziehen LUX® Produkte direkt über die KP Plattner GmbH. Die Registrierung erfolgt über das Händler-Anmeldeformular der KP Plattner GmbH. Für Fragen ist KP Plattner unter office@kp-plattner.at oder +43 512 264 064 erreichbar."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Welche Produkte gibt es von LUX®?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Das Sortiment umfasst Motiv- und Designfeuerzeuge, Piezo-, Turbo- und Jet-Flame-Feuerzeuge, BBQ- und Stabfeuerzeuge, Candle-Lite-Modelle und Feuerzeugbenzin sowie Zubehör zum Selberdrehen und Stopfen wie Hülsen, Papers und Filter."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Gibt es LUX® Werbefeuerzeuge mit eigenem Logo?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Ja. Viele LUX® Feuerzeuge sind als Werbefeuerzeuge erhältlich und können individuell bedruckt werden, wahlweise im Siebdruck, Tampondruck oder Digitaldruck. Anfragen dazu nimmt die KP Plattner GmbH entgegen."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Was macht LUX® für den Handel interessant?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "LUX® bietet ein sehr gutes Preis-Leistungs-Verhältnis: gute Margen für Händler bei trotzdem sehr fairen Preisen für Endkunden. Dazu kommt ein breites Sortiment, das laufend um neue Artikel ergänzt wird."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Ist das hier gezeigte Sortiment vollständig?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Nein. Diese Website zeigt nur einen kleinen Auszug aus dem kompletten LUX® Sortiment. Laufend kommen neue Artikel dazu. Das aktuelle Gesamtsortiment kann bei der KP Plattner GmbH angefragt werden."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
 <style>
 /* Layout: dunkle Packungsfläche, orange Wellenlinien als Leitmotiv, linksbündige Textspalten mit großzügigem Weißraum */
 :root {
@@ -92,6 +188,8 @@ section.block .wrap { padding-block: clamp(72px, 10vw, 120px); }
 .intro h2, .range h2, .closing h2 {
   font-family: var(--f-display); font-weight: 300; font-size: clamp(2rem, 4.4vw, 3.25rem); line-height: 1.1; letter-spacing: .01em;
 }
+.intro .head { display: grid; gap: 14px; }
+.hero .since { color: var(--orange); white-space: nowrap; }
 .intro h2 em { font-style: normal; color: var(--orange); }
 .intro .text { display: grid; gap: 20px; color: var(--mist); max-width: 36em; }
 .intro .text p:first-child { color: var(--white); }
@@ -145,6 +243,7 @@ section.block .wrap { padding-block: clamp(72px, 10vw, 120px); }
 .more h3 { font-family: var(--f-display); font-weight: 300; font-size: clamp(1.5rem, 2.8vw, 2rem); line-height: 1.15; }
 .more p { color: var(--mist); max-width: 40em; margin-top: 10px; }
 .more .contact { display: grid; gap: 6px; font-size: .9375rem; color: var(--mist); }
+.more .contact span a { color: var(--white); text-decoration: none; }
 .more .contact a:not(.btn) { color: var(--white); text-decoration: none; border-bottom: 1px solid var(--orange); justify-self: start; padding-bottom: 2px; }
 .btn.ghost { background: transparent; color: var(--white); border: 1px solid var(--orange); }
 .btn.ghost:hover { background: var(--orange); color: var(--navy-deep); }
@@ -159,6 +258,23 @@ section.block .wrap { padding-block: clamp(72px, 10vw, 120px); }
 .value .item .k { font-family: var(--f-serif); text-transform: uppercase; letter-spacing: .14em; font-size: .75rem; color: var(--mist); }
 .value .item h3 { font-family: var(--f-display); font-weight: 300; font-size: clamp(1.6rem, 3vw, 2.2rem); line-height: 1.12; }
 .value .item p { color: var(--mist); }
+
+/* FAQ */
+.faq header { display: grid; gap: 14px; margin-bottom: clamp(32px, 5vw, 48px); }
+.faq h2 { font-family: var(--f-display); font-weight: 300; font-size: clamp(2rem, 4.4vw, 3.25rem); line-height: 1.1; }
+.qas { max-width: 820px; border-top: 1px solid var(--navy-line); }
+.qa { border-bottom: 1px solid var(--navy-line); }
+.qa summary { list-style: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-block: 22px; }
+.qa summary::-webkit-details-marker { display: none; }
+.qa summary:focus-visible { outline: 2px solid var(--orange); outline-offset: 4px; }
+.qa h3 { font-family: var(--f-body); font-weight: 600; font-size: clamp(1.0625rem, 1.8vw, 1.1875rem); line-height: 1.4; color: var(--white); }
+.qa .pm { flex: none; width: 28px; height: 28px; border: 1px solid var(--orange); border-radius: 50%; position: relative; }
+.qa .pm::before, .qa .pm::after { content: ""; position: absolute; left: 50%; top: 50%; width: 11px; height: 1.5px; background: var(--orange); translate: -50% -50%; transition: rotate .2s ease; }
+.qa .pm::after { rotate: 90deg; }
+.qa[open] .pm::after { rotate: 0deg; }
+.qa p { color: var(--mist); max-width: 44em; padding-bottom: 24px; margin-top: -6px; }
+.qa p a { color: var(--white); text-decoration: none; border-bottom: 1px solid var(--orange); }
+.qa summary:hover h3 { color: var(--orange); }
 
 /* Händler */
 .dealer { background: var(--orange); color: var(--navy-deep); }
@@ -189,6 +305,7 @@ footer .wrap { padding-block: 40px; display: flex; flex-wrap: wrap; gap: 24px 48
 footer .logo { width: 72px; color: var(--white); margin-bottom: 14px; }
 footer address { font-style: normal; line-height: 1.6; }
 footer strong { color: var(--white); font-weight: 600; }
+footer address a { text-decoration: none; border-bottom: 1px solid var(--navy-line); }
 footer .copy { font-size: .8125rem; }
 footer .legal { display: grid; gap: 10px; justify-items: end; }
 footer .legal nav { display: flex; gap: 24px; font-size: .875rem; }
@@ -197,7 +314,20 @@ footer .legal a:hover { border-color: var(--orange); }
 @media (max-width: 760px) { footer .legal { justify-items: start; } }
 
 @media (max-width: 760px) {
-  .top nav { display: none; }
+  .hero .since { display: block; margin-top: 6px; }
+  .hero .since .dot { display: none; }
+  .top nav { display: flex; gap: 0; }
+  .top nav a:not(.cta) { display: none; }
+  .top nav a.cta { border: 1px solid var(--orange); border-radius: 999px; padding: 9px 16px; font-size: .75rem; letter-spacing: .06em; }
+  .top .logo { width: 56px; }
+  .hero .wrap { padding-bottom: 210px; gap: 24px; }
+  .hero canvas.waves { height: 190px; }
+  .closing .wrap { padding-bottom: 210px; }
+  .closing canvas.waves { height: 190px; }
+  section.block .wrap { padding-block: 64px; }
+  .dealer .btn, .more .btn { justify-self: stretch; justify-content: center; text-align: center; }
+  .more { padding: 24px 20px; }
+  .stage .ghost { font-size: 13cqw; }
   .intro .wrap { grid-template-columns: minmax(0, 1fr); }
   .show { grid-template-columns: minmax(0, 1fr); }
   .show:nth-child(even) { grid-template-columns: minmax(0, 1fr); }
@@ -227,6 +357,7 @@ footer .legal a:hover { border-color: var(--orange); }
       <a href="#marke">Marke</a>
       <a href="#sortiment">Sortiment</a>
       <a href="#kontakt">Kontakt</a>
+      <a href="#faq">FAQ</a>
       <a class="cta" href="#haendler">Händler werden</a>
     </nav>
   </div>
@@ -236,7 +367,7 @@ footer .legal a:hover { border-color: var(--orange); }
   <section class="hero">
     <div class="wrap">
       <h1><svg class="logo" viewBox="0 0 107.761 37.963" role="img" aria-label="LUX®"><use href="#lux"/></svg></h1>
-      <p class="sub">Feuerzeuge &amp; Zubehör</p>
+      <p class="sub">Feuerzeuge &amp; Zubehör <span class="since"><span class="dot" aria-hidden="true">· </span>seit 1984</span></p>
       <p class="lead">LUX® verbindet zuverlässige Funktion mit einem unverwechselbaren Look. Von auffälligen Motivfeuerzeugen über praktische Piezo- und Jet-Flame-Modelle bis hin zu BBQ-Feuerzeugen und Zubehör: LUX® bringt Abwechslung in den Alltag.</p>
       <a class="btn" href="#sortiment">LUX® Produkte entdecken
         <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M8 2v12M3 9l5 5 5-5"/></svg>
@@ -247,7 +378,7 @@ footer .legal a:hover { border-color: var(--orange); }
 
   <section class="block intro" id="marke">
     <div class="wrap">
-      <h2>So individuell <em>wie der Moment.</em></h2>
+      <div class="head"><p class="eyebrow">Seit 1984</p><h2>So individuell <em>wie der Moment.</em></h2></div>
       <div class="text">
         <p>LUX® steht für Produkte, die Funktion und Gestaltung miteinander verbinden. Die Marke setzt bewusst auf Abwechslung: kräftige Farben, unterschiedliche Motive, moderne Formen und Lösungen für verschiedenste Einsatzbereiche.</p>
         <p>Ob klassisches Alltagsfeuerzeug, auffälliges Motivmodell oder praktisches BBQ-Feuerzeug – LUX® richtet sich an alle, die bei funktionalen Produkten auch Wert auf Design und Persönlichkeit legen.</p>
@@ -318,7 +449,7 @@ footer .legal a:hover { border-color: var(--orange); }
         </div>
         <div class="contact">
           <a class="btn ghost" href="mailto:office@kp-plattner.at?subject=Anfrage%20LUX%C2%AE%20Sortiment" >Sortiment anfragen</a>
-          <span>office@kp-plattner.at · +43 512 264 064</span>
+          <span><a href="mailto:office@kp-plattner.at">office@kp-plattner.at</a> · <a href="tel:+43512264064">+43 512 264 064</a></span>
         </div>
       </aside>
     </div>
@@ -373,13 +504,51 @@ footer .legal a:hover { border-color: var(--orange); }
       </a>
     </div>
   </section>
+  <section class="block faq" id="faq">
+    <div class="wrap">
+      <header>
+        <p class="eyebrow">FAQ</p>
+        <h2>Häufige Fragen zu LUX®</h2>
+      </header>
+      <div class="qas">
+        <details class="qa" open>
+          <summary><h3>Wo kann man LUX® Produkte kaufen?</h3><span class="pm" aria-hidden="true"></span></summary>
+          <p>LUX® Produkte gibt es überwiegend in Tabaktrafiken und Fachgeschäften in Österreich und Deutschland sowie in vielen weiteren Ländern Europas. Auf dieser Website selbst werden keine Produkte verkauft.</p>
+        </details>
+        <details class="qa">
+          <summary><h3>Wer steht hinter der Marke LUX®?</h3><span class="pm" aria-hidden="true"></span></summary>
+          <p>LUX® ist eine eingetragene Marke der KP Plattner GmbH mit Sitz in Rum bei Innsbruck (Tirol, Österreich). Die Marke gibt es seit 1984.</p>
+        </details>
+        <details class="qa">
+          <summary><h3>Wie kann ich LUX® Händler werden?</h3><span class="pm" aria-hidden="true"></span></summary>
+          <p>Händler beziehen LUX® Produkte direkt über die KP Plattner GmbH. Die Registrierung erfolgt über das <a href="https://www.kp-plattner.at/kp-plattner/shop/info/anmeldeformular" target="_blank" rel="noopener">Händler-Anmeldeformular</a> der KP Plattner GmbH. Für Fragen ist KP Plattner unter <a href="mailto:office@kp-plattner.at">office@kp-plattner.at</a> oder <a href="tel:+43512264064">+43 512 264 064</a> erreichbar.</p>
+        </details>
+        <details class="qa">
+          <summary><h3>Welche Produkte gibt es von LUX®?</h3><span class="pm" aria-hidden="true"></span></summary>
+          <p>Das Sortiment umfasst Motiv- und Designfeuerzeuge, Piezo-, Turbo- und Jet-Flame-Feuerzeuge, BBQ- und Stabfeuerzeuge, Candle-Lite-Modelle und Feuerzeugbenzin sowie Zubehör zum Selberdrehen und Stopfen wie Hülsen, Papers und Filter.</p>
+        </details>
+        <details class="qa">
+          <summary><h3>Gibt es LUX® Werbefeuerzeuge mit eigenem Logo?</h3><span class="pm" aria-hidden="true"></span></summary>
+          <p>Ja. Viele LUX® Feuerzeuge sind als Werbefeuerzeuge erhältlich und können individuell bedruckt werden, wahlweise im Siebdruck, Tampondruck oder Digitaldruck. Anfragen dazu nimmt die KP Plattner GmbH entgegen.</p>
+        </details>
+        <details class="qa">
+          <summary><h3>Was macht LUX® für den Handel interessant?</h3><span class="pm" aria-hidden="true"></span></summary>
+          <p>LUX® bietet ein sehr gutes Preis-Leistungs-Verhältnis: gute Margen für Händler bei trotzdem sehr fairen Preisen für Endkunden. Dazu kommt ein breites Sortiment, das laufend um neue Artikel ergänzt wird.</p>
+        </details>
+        <details class="qa">
+          <summary><h3>Ist das hier gezeigte Sortiment vollständig?</h3><span class="pm" aria-hidden="true"></span></summary>
+          <p>Nein. Diese Website zeigt nur einen kleinen Auszug aus dem kompletten LUX® Sortiment. Laufend kommen neue Artikel dazu. Das aktuelle Gesamtsortiment kann bei der KP Plattner GmbH angefragt werden.</p>
+        </details>
+      </div>
+    </div>
+  </section>
 </main>
 
 <footer id="kontakt">
   <div class="wrap">
     <div>
       <svg class="logo" viewBox="0 0 107.761 37.963" role="img" aria-label="LUX®"><use href="#lux"/></svg>
-      <address><strong>Vertrieb / Distributor</strong><br>KP Plattner GmbH<br>Steinbockallee 9, A-6063 Rum<br>office@kp-plattner.at</address>
+      <address><strong>Vertrieb / Distributor</strong><br>KP Plattner GmbH<br>Steinbockallee 9, A-6063 Rum<br><a href="mailto:office@kp-plattner.at">office@kp-plattner.at</a></address>
     </div>
     <div class="legal">
       <nav aria-label="Rechtliches"><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></nav>
