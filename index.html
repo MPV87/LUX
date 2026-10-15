@@ -93,21 +93,57 @@ section.block .wrap { padding-block: clamp(72px, 10vw, 120px); }
 
 .range { background: var(--navy-deep); border-block: 1px solid var(--navy-line); }
 .range header { display: grid; gap: 14px; margin-bottom: clamp(40px, 6vw, 64px); }
-.grid4 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 1px solid var(--navy-line); }
-.cat { padding: 36px 40px 40px 0; border-bottom: 1px solid var(--navy-line); display: grid; gap: 14px; align-content: start; min-width: 0; }
-.cat:nth-child(2n) { padding: 36px 0 40px 40px; border-left: 1px solid var(--navy-line); }
-.shots {
-  background: radial-gradient(120% 90% at 50% 100%, var(--paper) 0%, var(--paper-2) 100%);
-  border-radius: 6px; aspect-ratio: 16 / 10; max-width: 100%;
-  display: flex; align-items: flex-end; justify-content: center; gap: 4%;
-  padding: 7% 6% 6%; margin-bottom: 12px; overflow: hidden;
+/* Sortiment: Bühnen mit Glow, Ringen und schwebenden Produkten, abwechselnd links/rechts */
+.shows { display: grid; gap: clamp(56px, 9vw, 120px); }
+.show { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(28px, 5vw, 72px); align-items: center; }
+.show:nth-child(even) { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); }
+.show:nth-child(even) .stage { order: 2; }
+.stage {
+  position: relative; aspect-ratio: 6 / 5; max-width: 100%; container-type: inline-size; border-radius: 10px; overflow: hidden; isolation: isolate;
+  background:
+    radial-gradient(55% 45% at 50% 62%, color-mix(in srgb, var(--orange) 34%, transparent) 0%, transparent 70%),
+    radial-gradient(120% 90% at 50% 0%, var(--navy-line) 0%, var(--navy-deep) 70%);
+  border: 1px solid var(--navy-line);
 }
-.shots img { flex: 1 1 0; width: 0; min-width: 0; height: 100%; object-fit: contain; object-position: center bottom; filter: drop-shadow(0 10px 14px rgba(11,24,48,.22)); transition: transform .35s ease; }
-.cat:hover .shots img { transform: translateY(-4px); }
-@media (prefers-reduced-motion: reduce) { .shots img, .btn { transition: none; } }
-.cat h3 { font-family: var(--f-display); font-weight: 400; font-size: clamp(1.4rem, 2.4vw, 1.75rem); line-height: 1.2; color: var(--white); }
-.cat .tag { font-family: var(--f-serif); text-transform: uppercase; letter-spacing: .14em; font-size: .75rem; color: var(--orange); }
-.cat p { color: var(--mist); max-width: 32em; }
+.stage::before, .stage::after {
+  content: ""; position: absolute; left: 50%; top: 56%; border-radius: 50%; translate: -50% -50%; z-index: -1;
+  border: 1px solid color-mix(in srgb, var(--orange) 45%, transparent);
+}
+.stage::before { width: 74%; aspect-ratio: 1; }
+.stage::after { width: 98%; aspect-ratio: 1; border-color: color-mix(in srgb, var(--orange) 18%, transparent); }
+.stage .ghost {
+  position: absolute; left: 5%; top: 4%; z-index: -1; margin: 0;
+  font-family: var(--f-display); font-weight: 200; font-size: 11.5cqw; line-height: 1; letter-spacing: .02em; text-transform: uppercase; white-space: nowrap;
+  color: transparent; -webkit-text-stroke: 1px color-mix(in srgb, var(--white) 22%, transparent);
+}
+.show:nth-child(even) .stage .ghost { left: auto; right: 5%; }
+.stage .floor { position: absolute; left: 12%; right: 12%; bottom: 6%; height: 8%; border-radius: 50%; background: radial-gradient(closest-side, rgba(0,0,0,.55), transparent); z-index: 0; }
+.stage img {
+  position: absolute; height: auto; z-index: 1;
+  left: var(--x); bottom: var(--y); width: var(--w);
+  transform: rotate(var(--r, 0deg));
+  filter: drop-shadow(0 18px 22px rgba(0,0,0,.45));
+  animation: float 6s ease-in-out infinite; animation-delay: var(--d, 0s);
+  transition: scale .45s cubic-bezier(.2,.7,.2,1);
+}
+.stage img.front { z-index: 2; }
+.show:hover .stage img { scale: 1.04; }
+@keyframes float { 0%, 100% { translate: 0 0; } 50% { translate: 0 -2.2%; } }
+@media (prefers-reduced-motion: reduce) { .stage img { animation: none; transition: none; } .btn { transition: none; } }
+.show .copy { display: grid; gap: 16px; align-content: center; min-width: 0; }
+.show .tag { font-family: var(--f-serif); text-transform: uppercase; letter-spacing: .14em; font-size: .8125rem; color: var(--orange); }
+.show h3 { font-family: var(--f-display); font-weight: 300; font-size: clamp(1.75rem, 3.4vw, 2.6rem); line-height: 1.12; color: var(--white); }
+.show .copy p:last-child { color: var(--mist); max-width: 30em; }
+
+/* Händler */
+.dealer { background: var(--orange); color: var(--navy-deep); }
+.dealer .wrap { padding-block: clamp(56px, 8vw, 96px); display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 28px 64px; align-items: end; }
+.dealer .eyebrow { color: var(--navy-deep); opacity: .75; }
+.dealer h2 { font-family: var(--f-display); font-weight: 300; font-size: clamp(2rem, 4.4vw, 3.25rem); line-height: 1.1; margin-top: 10px; }
+.dealer p.txt { max-width: 34em; margin-top: 16px; font-size: 1.0625rem; }
+.btn.dark { background: var(--navy-deep); color: var(--white); }
+.btn.dark:hover { background: var(--navy); }
+.top nav a.cta { color: var(--orange); }
 
 .manifest .wrap { display: grid; gap: 28px; }
 .manifest .words { display: grid; gap: 4px; }
@@ -138,8 +174,10 @@ footer .legal a:hover { border-color: var(--orange); }
 @media (max-width: 760px) {
   .top nav { display: none; }
   .intro .wrap { grid-template-columns: minmax(0, 1fr); }
-  .grid4 { grid-template-columns: minmax(0, 1fr); }
-  .cat, .cat:nth-child(2n) { padding: 30px 0 32px; border-left: 0; }
+  .show { grid-template-columns: minmax(0, 1fr); }
+  .show:nth-child(even) { grid-template-columns: minmax(0, 1fr); }
+  .show:nth-child(even) .stage { order: 0; }
+  .dealer .wrap { grid-template-columns: minmax(0, 1fr); }
 }
 </style>
 
@@ -160,6 +198,7 @@ footer .legal a:hover { border-color: var(--orange); }
       <a href="#marke">Marke</a>
       <a href="#sortiment">Sortiment</a>
       <a href="#kontakt">Kontakt</a>
+      <a class="cta" href="#haendler">Händler werden</a>
     </nav>
   </div>
 </header>
@@ -193,30 +232,54 @@ footer .legal a:hover { border-color: var(--orange); }
         <p class="eyebrow">Sortiment</p>
         <h2>LUX® in seiner ganzen Vielfalt</h2>
       </header>
-      <div class="grid4">
-        <article class="cat">
-          <div class="shots"><img src="lux-labelfeuerzeuge.webp" alt="LUX Motivfeuerzeuge mit farbenfrohen Landschaftsmotiven" loading="lazy" style="flex-grow:1.6"><img src="lux-sonderanfragen.webp" alt="LUX Feuerzeuge mit Geldschein-, Smiley- und Spielkartenmotiv im 3er-Pack" loading="lazy" style="flex-grow:1"></div>
-          <p class="tag">Design</p>
-          <h3>Motiv- &amp; Designfeuerzeuge</h3>
-          <p>Von Smileys über grafische Designs bis zu wechselnden Motivserien: Die LUX® Designmodelle machen aus einem Alltagsprodukt ein Produkt mit Wiedererkennungswert. Im aktuellen Sortiment finden sich beispielsweise Serien wie LUX Smiley, Biene und Wildnis.</p>
+      <div class="shows">
+        <article class="show">
+          <div class="stage">
+            <p class="ghost" aria-hidden="true">Design</p>
+            <span class="floor" aria-hidden="true"></span>
+            <img src="lux-labelfeuerzeuge.webp" alt="LUX Motivfeuerzeuge mit farbenfrohen Landschaftsmotiven" loading="lazy" style="--x:5%;--y:24%;--w:66%;--r:-3deg;--d:-0s"><img class="front" src="lux-sonderanfragen.webp" alt="LUX Feuerzeuge mit Geldschein-, Smiley- und Spielkartenmotiv im 3er-Pack" loading="lazy" style="--x:57%;--y:11%;--w:37%;--r:6deg;--d:-2.5s">
+          </div>
+          <div class="copy">
+            <p class="tag">Design</p>
+            <h3>Motiv- &amp; Designfeuerzeuge</h3>
+            <p>Von Smileys über grafische Designs bis zu wechselnden Motivserien: Die LUX® Designmodelle machen aus einem Alltagsprodukt ein Produkt mit Wiedererkennungswert. Im aktuellen Sortiment finden sich beispielsweise Serien wie LUX Smiley, Biene und Wildnis.</p>
+          </div>
         </article>
-        <article class="cat">
-          <div class="shots"><img src="lux-piezo.webp" alt="LUX Elektronikfeuerzeuge transparent in fünf Farben" loading="lazy" style="flex-grow:1.5"><img src="lux-turbofeuerzeuge.webp" alt="LUX Turbofeuerzeuge mit Farbverlauf" loading="lazy" style="flex-grow:1.4"><img src="lux-torch-jetflame.webp" alt="LUX Torch Jet-Flame Feuerzeug in Weiß" loading="lazy" style="flex-grow:0.7"></div>
-          <p class="tag">Technik</p>
-          <h3>Piezo &amp; Jet-Flame</h3>
-          <p>Zuverlässige Zündung trifft auf moderne Technik. LUX® bietet unterschiedliche Feuerzeugtypen für den täglichen Einsatz – vom klassischen Piezo-Modell bis zur konzentrierten Jet-Flame.</p>
+        <article class="show">
+          <div class="stage">
+            <p class="ghost" aria-hidden="true">Technik</p>
+            <span class="floor" aria-hidden="true"></span>
+            <img src="lux-piezo.webp" alt="LUX Elektronikfeuerzeuge transparent in fünf Farben" loading="lazy" style="--x:4%;--y:34%;--w:54%;--r:-4deg;--d:-0s"><img class="front" src="lux-turbofeuerzeuge.webp" alt="LUX Turbofeuerzeuge mit Farbverlauf" loading="lazy" style="--x:14%;--y:9%;--w:50%;--r:2deg;--d:-1.8s"><img class="front" src="lux-torch-jetflame.webp" alt="LUX Torch Jet-Flame Feuerzeug in Weiß" loading="lazy" style="--x:65%;--y:14%;--w:27%;--r:8deg;--d:-3.4s">
+          </div>
+          <div class="copy">
+            <p class="tag">Technik</p>
+            <h3>Piezo &amp; Jet-Flame</h3>
+            <p>Zuverlässige Zündung trifft auf moderne Technik. LUX® bietet unterschiedliche Feuerzeugtypen für den täglichen Einsatz – vom klassischen Piezo-Modell bis zur konzentrierten Jet-Flame.</p>
+          </div>
         </article>
-        <article class="cat">
-          <div class="shots"><img src="lux-bbq.webp" alt="LUX BBQ-Stabfeuerzeuge in vier Farbkombinationen" loading="lazy" style="flex-grow:1"><img src="lux-candlelite.webp" alt="LUX Candle Lite Stabfeuerzeuge mit Farbverlauf" loading="lazy" style="flex-grow:1.4"></div>
-          <p class="tag">Reichweite</p>
-          <h3>BBQ, Candle Lite &amp; Stabfeuerzeuge</h3>
-          <p>Mehr Reichweite für Grill, Kerzen und Haushalt: LUX® bietet unterschiedliche Stab- und BBQ-Feuerzeuge. Im aktuellen Sortiment finden sich unter anderem BBQ Slim, Tele und BBQ Meto sowie verschiedene Candle-Lite-Modelle.</p>
+        <article class="show">
+          <div class="stage">
+            <p class="ghost" aria-hidden="true">Reichweite</p>
+            <span class="floor" aria-hidden="true"></span>
+            <img src="lux-bbq.webp" alt="LUX BBQ-Stabfeuerzeuge in vier Farbkombinationen" loading="lazy" style="--x:6%;--y:8%;--w:46%;--r:-9deg;--d:-0s"><img class="front" src="lux-candlelite.webp" alt="LUX Candle Lite Stabfeuerzeuge mit Farbverlauf" loading="lazy" style="--x:43%;--y:12%;--w:53%;--r:4deg;--d:-2.2s">
+          </div>
+          <div class="copy">
+            <p class="tag">Reichweite</p>
+            <h3>BBQ, Candle Lite &amp; Stabfeuerzeuge</h3>
+            <p>Mehr Reichweite für Grill, Kerzen und Haushalt: LUX® bietet unterschiedliche Stab- und BBQ-Feuerzeuge. Im aktuellen Sortiment finden sich unter anderem BBQ Slim, Tele und BBQ Meto sowie verschiedene Candle-Lite-Modelle.</p>
+          </div>
         </article>
-        <article class="cat">
-          <div class="shots"><img src="lux-huelsen.webp" alt="LUX Zigarettenhülsen King Size mit Filter, 500er Packung" loading="lazy" style="flex-grow:1.4"><img src="lux-papers.webp" alt="LUX Premium Papers King Size Slim, Display und Heftchen" loading="lazy" style="flex-grow:1.2"><img src="lux-filter.webp" alt="LUX Extra Slim Filter Tips, 120 Stück" loading="lazy" style="flex-grow:0.6"></div>
-          <p class="tag">Zubehör</p>
-          <h3>Hülsen &amp; Papers</h3>
-          <p>Auch im Bereich rund ums Selberdrehen und Stopfen ist LUX® vertreten. Aktuell werden beispielsweise LUX Hülsen in unterschiedlichen Packungsgrößen angeboten.</p>
+        <article class="show">
+          <div class="stage">
+            <p class="ghost" aria-hidden="true">Zubehör</p>
+            <span class="floor" aria-hidden="true"></span>
+            <img src="lux-huelsen.webp" alt="LUX Zigarettenhülsen King Size mit Filter, 500er Packung" loading="lazy" style="--x:3%;--y:34%;--w:56%;--r:-5deg;--d:-0s"><img class="front" src="lux-papers.webp" alt="LUX Premium Papers King Size Slim, Display und Heftchen" loading="lazy" style="--x:52%;--y:8%;--w:44%;--r:4deg;--d:-2s"><img class="front" src="lux-filter.webp" alt="LUX Extra Slim Filter Tips, 120 Stück" loading="lazy" style="--x:7%;--y:6%;--w:17%;--r:-7deg;--d:-3.6s">
+          </div>
+          <div class="copy">
+            <p class="tag">Zubehör</p>
+            <h3>Hülsen &amp; Papers</h3>
+            <p>Auch im Bereich rund ums Selberdrehen und Stopfen ist LUX® vertreten. Aktuell werden beispielsweise LUX Hülsen in unterschiedlichen Packungsgrößen angeboten.</p>
+          </div>
         </article>
       </div>
     </div>
@@ -236,6 +299,18 @@ footer .legal a:hover { border-color: var(--orange); }
       <p>Von farbenfrohen Klassikern bis zu funktionalen Spezialfeuerzeugen: LUX® bietet eine vielseitige Auswahl rund um Feuer und Zubehör.</p>
     </div>
     <canvas class="waves" data-seed="2" aria-hidden="true"></canvas>
+  </section>
+  <section class="dealer" id="haendler">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow">Für den Handel</p>
+        <h2>LUX® Händler werden</h2>
+        <p class="txt">Du möchtest LUX® Produkte in deinem Geschäft anbieten? Melde dich über das Anmeldeformular der KP Plattner GmbH als Händler an.</p>
+      </div>
+      <a class="btn dark" href="https://www.kp-plattner.at/kp-plattner/shop/info/anmeldeformular" target="_blank" rel="noopener">Zum Händler-Anmeldeformular
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12L12 4M6 4h6v6"/></svg>
+      </a>
+    </div>
   </section>
 </main>
 
