@@ -1,7 +1,11 @@
-<title>LUX® Onepager</title>
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>LUX® | Feuerzeuge &amp; Zubehör</title>
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="favicon.png">
-<meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400&family=Lora:wght@400;500&family=Mulish:wght@400;600;700&display=swap">
@@ -25,6 +29,7 @@
 html { scroll-behavior: smooth; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 body {
+  margin: 0;
   background: var(--navy);
   color: var(--white);
   font-family: var(--f-body);
@@ -135,6 +140,26 @@ section.block .wrap { padding-block: clamp(72px, 10vw, 120px); }
 .show h3 { font-family: var(--f-display); font-weight: 300; font-size: clamp(1.75rem, 3.4vw, 2.6rem); line-height: 1.12; color: var(--white); }
 .show .copy p:last-child { color: var(--mist); max-width: 30em; }
 
+/* Auszug-Hinweis */
+.more { margin-top: clamp(56px, 8vw, 96px); display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 24px 48px; align-items: center; padding: clamp(24px, 4vw, 40px); border: 1px dashed color-mix(in srgb, var(--orange) 60%, transparent); border-radius: 10px; }
+.more h3 { font-family: var(--f-display); font-weight: 300; font-size: clamp(1.5rem, 2.8vw, 2rem); line-height: 1.15; }
+.more p { color: var(--mist); max-width: 40em; margin-top: 10px; }
+.more .contact { display: grid; gap: 6px; font-size: .9375rem; color: var(--mist); }
+.more .contact a:not(.btn) { color: var(--white); text-decoration: none; border-bottom: 1px solid var(--orange); justify-self: start; padding-bottom: 2px; }
+.btn.ghost { background: transparent; color: var(--white); border: 1px solid var(--orange); }
+.btn.ghost:hover { background: var(--orange); color: var(--navy-deep); }
+
+/* Preis-Leistung */
+.value .wrap { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(32px, 6vw, 88px); align-items: start; }
+.value h2 { font-family: var(--f-display); font-weight: 300; font-size: clamp(2rem, 4.4vw, 3.25rem); line-height: 1.1; margin-top: 14px; }
+.value h2 em { font-style: normal; color: var(--orange); }
+.value .lead { color: var(--mist); margin-top: 20px; max-width: 30em; }
+.value .pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.value .item { border-top: 2px solid var(--orange); padding-top: 22px; display: grid; gap: 12px; align-content: start; min-width: 0; }
+.value .item .k { font-family: var(--f-serif); text-transform: uppercase; letter-spacing: .14em; font-size: .75rem; color: var(--mist); }
+.value .item h3 { font-family: var(--f-display); font-weight: 300; font-size: clamp(1.6rem, 3vw, 2.2rem); line-height: 1.12; }
+.value .item p { color: var(--mist); }
+
 /* Händler */
 .dealer { background: var(--orange); color: var(--navy-deep); }
 .dealer .wrap { padding-block: clamp(56px, 8vw, 96px); display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 28px 64px; align-items: end; }
@@ -178,8 +203,12 @@ footer .legal a:hover { border-color: var(--orange); }
   .show:nth-child(even) { grid-template-columns: minmax(0, 1fr); }
   .show:nth-child(even) .stage { order: 0; }
   .dealer .wrap { grid-template-columns: minmax(0, 1fr); }
+  .more { grid-template-columns: minmax(0, 1fr); }
+  .value .wrap, .value .pair { grid-template-columns: minmax(0, 1fr); }
 }
 </style>
+</head>
+<body>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="lux" viewBox="0 0 107.761 37.963">
@@ -282,6 +311,38 @@ footer .legal a:hover { border-color: var(--orange); }
           </div>
         </article>
       </div>
+      <aside class="more" aria-label="Weitere Artikel">
+        <div>
+          <h3>Nur ein kleiner Auszug.</h3>
+          <p>Was hier zu sehen ist, ist nur ein kleiner Auszug aus dem kompletten LUX® Sortiment. Laufend kommen neue Artikel dazu. Das aktuelle Gesamtsortiment kann bei der KP Plattner GmbH angefragt werden.</p>
+        </div>
+        <div class="contact">
+          <a class="btn ghost" href="mailto:office@kp-plattner.at?subject=Anfrage%20LUX%C2%AE%20Sortiment" >Sortiment anfragen</a>
+          <span>office@kp-plattner.at · +43 512 264 064</span>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="block value" id="preis-leistung">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow">Preis-Leistung</p>
+        <h2>Starke Qualität, <em>faire Preise.</em></h2>
+        <p class="lead">LUX® bietet ein sehr gutes Preis-Leistungs-Verhältnis. Davon profitieren Handel und Kundschaft gleichermaßen.</p>
+      </div>
+      <div class="pair">
+        <div class="item">
+          <p class="k">Für den Handel</p>
+          <h3>Gute Margen</h3>
+          <p>LUX® ist so kalkuliert, dass Händler mit dem Sortiment gute Margen erzielen.</p>
+        </div>
+        <div class="item">
+          <p class="k">Für Endkunden</p>
+          <h3>Sehr faire Preise</h3>
+          <p>Trotz guter Händlermargen bleiben die Preise für Endkunden sehr fair.</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -305,7 +366,7 @@ footer .legal a:hover { border-color: var(--orange); }
       <div>
         <p class="eyebrow">Für den Handel</p>
         <h2>LUX® Händler werden</h2>
-        <p class="txt">Sie möchten LUX® Produkte in Ihrem Geschäft anbieten? Melden Sie sich über das Anmeldeformular der KP Plattner GmbH als Händler an.</p>
+        <p class="txt">Sie möchten LUX® Produkte in Ihrem Geschäft anbieten? Profitieren Sie von guten Margen, fairen Endkundenpreisen und laufend neuen Artikeln. Melden Sie sich über das Anmeldeformular der KP Plattner GmbH als Händler an.</p>
       </div>
       <a class="btn dark" href="https://www.kp-plattner.at/kp-plattner/shop/info/anmeldeformular" target="_blank" rel="noopener">Zum Händler-Anmeldeformular
         <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12L12 4M6 4h6v6"/></svg>
@@ -376,3 +437,5 @@ footer .legal a:hover { border-color: var(--orange); }
   window.addEventListener('resize', function () { if (reduce) frame(0); });
 })();
 </script>
+</body>
+</html>
