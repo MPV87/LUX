@@ -73,7 +73,7 @@ a:focus-visible, .btn:focus-visible { outline: 2px solid var(--orange); outline-
 /* Impressum */
 .legal-head { border-bottom: 1px solid var(--navy-line); background: radial-gradient(70% 140% at 85% 120%, color-mix(in srgb, var(--orange) 22%, transparent), transparent 70%); }
 .legal-head .wrap { padding-block: clamp(56px, 9vw, 104px) clamp(40px, 6vw, 64px); display: grid; gap: 14px; }
-.legal-head h1 { font-family: var(--f-display); font-weight: 300; font-size: clamp(2.4rem, 6vw, 4rem); line-height: 1.05; }
+.legal-head h1 { font-family: var(--f-display); font-weight: 300; font-size: clamp(1.9rem, 6vw, 4rem); line-height: 1.05; hyphens: auto; overflow-wrap: anywhere; }
 .legal-body .wrap { padding-block: clamp(40px, 6vw, 72px) clamp(64px, 9vw, 112px); display: grid; gap: clamp(40px, 6vw, 56px); }
 .legal-body h2 { font-family: var(--f-serif); font-weight: 400; text-transform: uppercase; letter-spacing: .14em; font-size: .8125rem; color: var(--orange); margin-bottom: 18px; }
 .firm { font-family: var(--f-display); font-weight: 400; font-size: clamp(1.5rem, 3vw, 2rem); line-height: 1.25; }
@@ -92,6 +92,7 @@ footer .wrap { padding-block: 40px; display: flex; flex-wrap: wrap; gap: 24px 48
 footer .logo { width: 72px; color: var(--white); margin-bottom: 14px; }
 footer address { font-style: normal; line-height: 1.6; }
 footer strong { color: var(--white); font-weight: 600; }
+footer address a { text-decoration: none; border-bottom: 1px solid var(--navy-line); }
 footer .copy { font-size: .8125rem; }
 footer .legal { display: grid; gap: 10px; justify-items: end; }
 footer .legal nav { display: flex; gap: 24px; font-size: .875rem; }
@@ -101,7 +102,10 @@ footer .legal a:hover { border-color: var(--orange); }
 
 
 @media (max-width: 760px) {
-  .top nav { display: none; }
+  .top nav { display: flex; gap: 0; }
+  .top nav a:not(.cta) { display: none; }
+  .top nav a.cta { border: 1px solid var(--orange); border-radius: 999px; padding: 9px 16px; font-size: .75rem; letter-spacing: .06em; }
+  .top .logo { width: 56px; }
   table.facts th, table.facts td { display: block; width: auto; padding: 0; border: 0; }
   table.facts th { padding-top: 14px; font-size: .8125rem; }
   table.facts td { padding-bottom: 14px; border-bottom: 1px solid var(--navy-line); }
@@ -185,7 +189,7 @@ footer .legal a:hover { border-color: var(--orange); }
   <div class="wrap">
     <div>
       <svg class="logo" viewBox="0 0 107.761 37.963" role="img" aria-label="LUX®"><use href="#lux"/></svg>
-      <address><strong>Vertrieb / Distributor</strong><br>KP Plattner GmbH<br>Steinbockallee 9, A-6063 Rum<br>office@kp-plattner.at</address>
+      <address><strong>Vertrieb / Distributor</strong><br>KP Plattner GmbH<br>Steinbockallee 9, A-6063 Rum<br><a href="mailto:office@kp-plattner.at">office@kp-plattner.at</a></address>
     </div>
     <div class="legal">
       <nav aria-label="Rechtliches"><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></nav>
