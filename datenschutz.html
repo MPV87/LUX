@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Datenschutz | LUX®</title>
+<meta name="robots" content="noindex, follow">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400&family=Lora:wght@400;500&family=Mulish:wght@400;600;700&display=swap">
+<style>
+/* Layout: dunkle Packungsfläche, orange Wellenlinien als Leitmotiv, linksbündige Textspalten mit großzügigem Weißraum */
+:root {
+  --navy: #10223F;        /* Packungs-Navy (aus Vorschau angenähert) */
+  --navy-deep: #0B1830;
+  --navy-line: #22365A;
+  --orange: #F2672A;      /* Packungs-Orange (aus Vorschau angenähert) */
+  --white: #FFFFFF;
+  --mist: #B8C2D6;
+  --paper: #F4F6FA;
+  --paper-2: #DCE2EC;
+  --f-display: "Josefin Sans", "Futura", "Century Gothic", sans-serif;
+  --f-serif: "Lora", Georgia, "Times New Roman", serif;
+  --f-body: "Mulish", "Segoe UI", system-ui, sans-serif;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { margin: 0;
+  background: var(--navy);
+  color: var(--white);
+  font-family: var(--f-body);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding-left: max(24px, env(safe-area-inset-left, 0px));
+  padding-right: max(24px, env(safe-area-inset-right, 0px));
+}
+h1, h2, h3 { text-wrap: balance; margin: 0; }
+p { margin: 0; }
+.eyebrow {
+  font-family: var(--f-serif);
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  font-size: .8125rem;
+  color: var(--mist);
+}
+a { color: inherit; }
+a:focus-visible, .btn:focus-visible { outline: 2px solid var(--orange); outline-offset: 4px; }
+
+/* Kopfzeile */
+.top {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 10;
+  background: color-mix(in srgb, var(--navy) 88%, transparent);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--navy-line);
+}
+.top .wrap { display: flex; align-items: center; justify-content: space-between; padding-block: 16px; }
+.top .logo { width: 64px; color: var(--orange); display: block; }
+.top nav { display: flex; gap: 28px; font-size: .875rem; letter-spacing: .08em; text-transform: uppercase; }
+.top nav a { text-decoration: none; color: var(--mist); }
+.top nav a:hover { color: var(--white); }
+
+
+.top nav a.cta { color: var(--orange); }
+/* Impressum */
+.legal-head { border-bottom: 1px solid var(--navy-line); background: radial-gradient(70% 140% at 85% 120%, color-mix(in srgb, var(--orange) 22%, transparent), transparent 70%); }
+.legal-head .wrap { padding-block: clamp(56px, 9vw, 104px) clamp(40px, 6vw, 64px); display: grid; gap: 14px; }
+.legal-head h1 { font-family: var(--f-display); font-weight: 300; font-size: clamp(1.9rem, 6vw, 4rem); line-height: 1.05; hyphens: auto; overflow-wrap: anywhere; }
+.legal-body .wrap { padding-block: clamp(40px, 6vw, 72px) clamp(64px, 9vw, 112px); display: grid; grid-template-columns: minmax(0, 1fr); gap: clamp(40px, 6vw, 56px); }
+.legal-body h2 { font-family: var(--f-serif); font-weight: 400; text-transform: uppercase; letter-spacing: .14em; font-size: .8125rem; color: var(--orange); margin-bottom: 18px; }
+.firm { font-family: var(--f-display); font-weight: 400; font-size: clamp(1.5rem, 3vw, 2rem); line-height: 1.25; }
+.firm span { display: block; font-family: var(--f-body); font-size: 1.0625rem; color: var(--mist); margin-top: 8px; line-height: 1.65; }
+table.facts { width: 100%; max-width: 760px; border-collapse: collapse; }
+table.facts th, table.facts td { text-align: left; vertical-align: top; padding: 14px 0; border-bottom: 1px solid var(--navy-line); }
+table.facts th { width: 38%; padding-right: 24px; font-weight: 600; color: var(--mist); font-size: .9375rem; }
+table.facts td { color: var(--white); }
+table.facts a { text-decoration: none; border-bottom: 1px solid var(--navy-line); }
+table.facts a:hover { border-color: var(--orange); }
+.note { max-width: 46em; color: var(--mist); display: grid; gap: 14px; }
+.note strong { color: var(--white); font-weight: 600; }
+.prose { min-width: 0; display: grid; grid-template-columns: minmax(0, 1fr); gap: clamp(32px, 4vw, 44px); max-width: 46em; }
+.prose .sec { display: grid; gap: 12px; padding-top: 24px; border-top: 1px solid var(--navy-line); }
+.prose .sec h2 { margin-bottom: 4px; }
+.prose p { color: var(--mist); overflow-wrap: anywhere; hyphens: auto; }
+.prose a { color: var(--white); text-decoration: none; border-bottom: 1px solid var(--orange); overflow-wrap: anywhere; }
+.back { justify-self: start; display: inline-flex; gap: 10px; align-items: center; color: var(--white); text-decoration: none; font-weight: 600; border-bottom: 1px solid var(--orange); padding-bottom: 3px; }
+footer { background: var(--navy-deep); border-top: 1px solid var(--navy-line); font-size: .9375rem; color: var(--mist); }
+footer .wrap { padding-block: 40px; display: flex; flex-wrap: wrap; gap: 24px 48px; justify-content: space-between; align-items: end; }
+footer .logo { width: 72px; color: var(--white); margin-bottom: 14px; }
+footer address { font-style: normal; line-height: 1.6; }
+footer strong { color: var(--white); font-weight: 600; }
+footer address a { text-decoration: none; border-bottom: 1px solid var(--navy-line); }
+footer .copy { font-size: .8125rem; }
+footer .legal { display: grid; gap: 10px; justify-items: end; }
+footer .legal nav { display: flex; gap: 24px; font-size: .875rem; }
+footer .legal a { color: var(--white); text-decoration: none; border-bottom: 1px solid var(--navy-line); padding-bottom: 2px; }
+footer .legal a:hover { border-color: var(--orange); }
+@media (max-width: 760px) { footer .legal { justify-items: start; } }
+
+
+@media (max-width: 760px) {
+  .top nav { display: flex; gap: 0; }
+  .top nav a:not(.cta) { display: none; }
+  .top nav a.cta { border: 1px solid var(--orange); border-radius: 999px; padding: 9px 16px; font-size: .75rem; letter-spacing: .06em; }
+  .top .logo { width: 56px; }
+  table.facts th, table.facts td { display: block; width: auto; padding: 0; border: 0; }
+  table.facts th { padding-top: 14px; font-size: .8125rem; }
+  table.facts td { padding-bottom: 14px; border-bottom: 1px solid var(--navy-line); }
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="lux" viewBox="0 0 107.761 37.963">
+    <path fill="currentColor" d="M 58.246094 0.0234375 L 53.363281 0.0234375 C 53.273438 0.0351562 53.28125 0.140625 53.285156 0.25 C 53.558594 7.121094 53.988281 15.34375 53.136719 21.96875 C 52.296875 28.496094 49.375 33.652344 42.464844 33.84375 C 27.6875 34.253906 30.757812 14.949219 30.816406 0.851562 L 25.929688 0.851562 C 26.09375 9.890625 25.359375 19.351562 27.058594 26.480469 C 28.734375 33.542969 33.492188 38.257812 42.464844 37.828125 C 50.722656 37.429688 55.269531 32.496094 57.042969 25.652344 C 58.890625 18.523438 58.046875 9.152344 58.246094 0.0234375"/>
+    <path fill="currentColor" d="M 97.78125 5.585938 C 98.109375 5.253906 99.523438 4.160156 99.507812 3.855469 C 99.496094 3.582031 98.128906 2.554688 97.78125 2.203125 C 96.96875 1.394531 96.535156 0.785156 95.898438 0.398438 C 91.84375 5.410156 87.699219 10.335938 83.425781 15.128906 C 79.585938 10.25 75.605469 5.511719 71.925781 0.472656 C 70.585938 1.589844 69.285156 2.746094 68.09375 4.007812 C 72.214844 8.75 76.308594 13.527344 80.34375 18.363281 C 75.6875 23.75 71.066406 29.179688 66.363281 34.519531 C 67.511719 35.628906 68.472656 36.917969 69.746094 37.902344 C 74.125 32.335938 78.480469 26.746094 83.046875 21.367188 C 87.527344 26.835938 92.035156 32.269531 96.425781 37.828125 C 97.617188 36.589844 99 35.539062 100.109375 34.21875 C 95.546875 28.761719 90.726562 23.5625 86.128906 18.136719 C 89.632812 14.125 93.84375 9.519531 97.78125 5.585938"/>
+    <path fill="currentColor" d="M 5.5625 0.550781 L 0.300781 0.550781 C 0.214844 0.5625 0.21875 0.667969 0.226562 0.773438 C 0.421875 12.585938 0.785156 25.550781 0 37 C 5.894531 37.117188 11.660156 37.363281 17.511719 37.527344 L 17.511719 33.015625 C 13.507812 33.222656 9.257812 33.179688 5.109375 33.242188 C 5.171875 22.253906 4.910156 10.945312 5.5625 0.550781"/>
+    <path fill="currentColor" d="M 102.4375 2.351562 C 102.566406 1.621094 103.257812 0.851562 104.242188 0.625 C 105.464844 0.339844 106.890625 1.277344 107.023438 2.578125 C 107.367188 5.988281 101.804688 5.988281 102.4375 2.351562 M 104.167969 0.175781 C 102.996094 0.402344 102.34375 1.234375 102.140625 1.75 C 101.5 3.390625 102.410156 4.691406 103.039062 5.132812 C 105.042969 6.542969 107.933594 4.863281 107.472656 2.277344 C 107.25 1.027344 105.863281 -0.15625 104.167969 0.175781"/>
+    <path fill="currentColor" d="M 104.019531 2.730469 L 104.019531 1.828125 C 104.640625 1.832031 105.386719 1.710938 105.296875 2.429688 C 105.070312 2.730469 104.527344 2.710938 104.019531 2.730469 M 105.671875 1.675781 C 105.199219 1.320312 104.324219 1.371094 103.492188 1.375 L 103.492188 4.382812 L 104.019531 4.382812 C 104.066406 3.980469 103.917969 3.382812 104.09375 3.105469 C 105.242188 3.007812 104.792969 4.511719 105.972656 4.382812 C 105.765625 3.835938 105.417969 3.433594 105.070312 3.03125 C 105.726562 3.015625 105.988281 2.21875 105.671875 1.675781"/>
+  </symbol>
+</svg>
+
+<header class="top">
+  <div class="wrap">
+    <a href="index.html" aria-label="LUX® – zur Startseite"><svg class="logo" viewBox="0 0 107.761 37.963" role="img" aria-label="LUX®"><use href="#lux"/></svg></a>
+    <nav aria-label="Seitennavigation">
+      <a href="index.html#marke">Marke</a>
+      <a href="index.html#sortiment">Sortiment</a>
+      <a class="cta" href="index.html#haendler">Händler werden</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="legal-head">
+    <div class="wrap">
+      <p class="eyebrow">Rechtliches</p>
+      <h1>Datenschutzerklärung</h1>
+    </div>
+  </section>
+
+  <section class="legal-body">
+    <div class="wrap">
+      <div class="prose">
+        <section class="sec">
+          <h2>Geltungsbereich</h2>
+          <p>Der Schutz Ihrer persönlichen Daten ist uns ein besonderes Anliegen. Wir verarbeiten Ihre Daten daher ausschließlich auf Grundlage der gesetzlichen Bestimmungen (DSGVO, TKG 2003). Diese Datenschutzerklärung klärt Nutzer über die Art, den Umfang und die Zwecke der Erhebung und Verwendung personenbezogener Daten durch den verantwortlichen Anbieter KP-Plattner GmbH, Raucherbedarf und Werbeartikel, Steinbockallee 9, A-6063 Rum, Tel.: +43 512 264064, Fax: +43 512 266494, E-Mail: office@kp-plattner.at, auf dieser Website (im Folgenden "Angebot") auf.</p>
+        </section>
+        <section class="sec">
+          <h2>Begriffsdefinitionen</h2>
+          <p>Personenbezogene Daten sind alle Informationen, die sich auf eine identifizierte oder identifizierbare natürliche Person beziehen (z.B. Name, E-Mail-Adresse, Telefonnummer). Verarbeitung meint jeden Vorgang im Zusammenhang mit diesen Daten, sei es das Erheben, Speichern, Ändern oder Weitergeben.</p>
+        </section>
+        <section class="sec">
+          <h2>Zugriffsdaten/ Server-Logfiles</h2>
+          <p>Der Anbieter (beziehungsweise sein Webspace-Provider) erhebt Daten über jeden Zugriff auf das Angebot (sogenannte Serverlogfiles). Zu den Zugriffsdaten gehören: Name der abgerufenen Webseite, Datei, Datum und Uhrzeit des Abrufs, übertragene Datenmenge, Meldung über erfolgreichen Abruf, Browsertyp nebst Version, das Betriebssystem des Nutzers, Referrer URL (die zuvor besuchte Seite), IP-Adresse und der anfragende Provider.</p>
+          <p>Der Anbieter verwendet die Protokolldaten nur für statistische Auswertungen zum Zweck des Betriebs, der Sicherheit und der Optimierung des Angebotes. Protokolldaten werden für eine Dauer von maximal 30 Tagen gespeichert, es sei denn, es besteht der berechtigte Verdacht auf eine rechtswidrige Nutzung.</p>
+        </section>
+        <section class="sec">
+          <h2>Umgang mit personenbezogenen Daten</h2>
+          <p>Personenbezogene Daten werden vom Anbieter nur dann erhoben, genutzt und weitergegeben, wenn dies gesetzlich erlaubt ist oder die Nutzer in die Datenerhebung einwilligen.</p>
+        </section>
+        <section class="sec">
+          <h2>Kontaktaufnahme</h2>
+          <p>Bei der Kontaktaufnahme mit dem Anbieter (zum Beispiel per Kontaktformular oder E-Mail) werden die Angaben des Nutzers zwecks Bearbeitung der Anfrage sowie für den Fall, dass Anschlussfragen entstehen, für die Dauer von 1 Jahr gespeichert.</p>
+        </section>
+        <section class="sec">
+          <h2>Datenspeicherung</h2>
+          <p>Wir weisen darauf hin, dass zum Zweck der Vertragsabwicklung folgende Daten auch bei uns gespeichert werden: Firmenname, Ansprechpartner, Adresse, E-Mail und eventuell UID-Nummer.</p>
+          <p>Die von Ihnen bereitgestellten Daten sind zur Vertragserfüllung bzw. zur Durchführung vorvertraglicher Maßnahmen erforderlich. Ohne diese Daten können wir den Vertrag mit Ihnen nicht abschließen. Eine Datenübermittlung an Dritte erfolgt nicht, mit Ausnahme des von uns beauftragten Transportunternehmens/Versandunternehmens zur Zustellung der Ware sowie an unseren Steuerberater zur Erfüllung unserer steuerrechtlichen Verpflichtungen. Zudem hat eine externe EDV-Firma Zugang zum Firmenserver im Zusammenhang mit der technischen Betreuung.</p>
+          <p>Im Falle eines Vertragsabschlusses werden sämtliche Daten aus dem Vertragsverhältnis bis zum Ablauf der steuerrechtlichen Aufbewahrungsfrist gespeichert. Die Daten Name, Anschrift, gekaufte Ware und Kaufdatum werden darüber hinaus bis zum Ablauf der Produkthaftung (10 Jahre) gespeichert. Die Datenverarbeitung erfolgt auf Basis der gesetzlichen Bestimmungen des § 96 Abs 3 TKG sowie des Art 6 Abs 1 lit a (Einwilligung) und lit b (notwendig zur Vertragserfüllung) der DSGVO.</p>
+        </section>
+        <section class="sec">
+          <h2>Kommentare und Beiträge</h2>
+          <p>Wenn Nutzer Kommentare im Blog oder sonstige Beiträge hinterlassen, werden ihre IP-Adressen gespeichert. Das erfolgt zur Sicherheit des Anbieters, falls jemand widerrechtliche Inhalte schreibt (Beleidigungen, verbotene politische Propaganda, etc.). In diesem Fall kann der Anbieter selbst für den Kommentar oder Beitrag belangt werden und ist daher an der Identität des Verfassers interessiert.</p>
+        </section>
+        <section class="sec">
+          <h2>Newsletter</h2>
+          <p>Mit dem Newsletter informieren wir Sie über uns und unsere Angebote.</p>
+          <p>Wenn Sie den Newsletter empfangen möchten, benötigen wir von Ihnen Ihren Namen, eine valide E-Mail-Adresse sowie Informationen, die uns die Überprüfung gestatten, dass Sie der Inhaber der angegebenen E-Mail-Adresse sind bzw. deren Inhaber mit dem Empfang des Newsletters einverstanden ist. Weitere Daten werden nicht erhoben. Diese Daten werden nur für den Versand der Newsletter verwendet und nicht an Dritte weitergegeben.</p>
+          <p>Mit der Anmeldung zum Newsletter speichern wir Ihre IP-Adresse und das Datum der Anmeldung. Diese Speicherung dient alleine dem Nachweis im Fall, dass ein Dritter eine E-Mail-Adresse missbraucht und sich ohne Wissen des Berechtigten für den Newsletter anmeldet.</p>
+          <p>Ihre Einwilligung zur Speicherung der Daten, Name, E-Mail-Adresse sowie deren Nutzung zum Versand des Newsletters können Sie jederzeit widerrufen. Der Widerruf kann über einen Link in den Newslettern selbst oder per Mitteilung an die obenstehenden Kontaktmöglichkeiten erfolgen.</p>
+        </section>
+        <section class="sec">
+          <h2>Einbindung von Diensten und Inhalten Dritter</h2>
+          <p>Es kann vorkommen, dass innerhalb dieses Onlineangebotes Inhalte Dritter, wie z.B. Videos von YouTube, Kartenmaterial von Google Maps, RSS-Feeds oder Grafiken von anderen Webseiten eingebunden werden. Dies setzt immer voraus, dass die Anbieter dieser Inhalte (nachfolgend bezeichnet als "Dritt-Anbieter") die IP-Adresse der Nutzer wahrnehmen. Denn ohne die IP-Adresse könnten sie die Inhalte nicht an den Browser des jeweiligen Nutzers senden. Die IP-Adresse ist damit für die Darstellung dieser Inhalte erforderlich. Wir bemühen uns, nur solche Inhalte zu verwenden, deren jeweilige Anbieter die IP-Adresse lediglich zur Auslieferung der Inhalte verwenden. Jedoch haben wir keinen Einfluss darauf, falls die Dritt-Anbieter die IP-Adresse z.B. für statistische Zwecke speichern. Soweit dies uns bekannt ist, klären wir die Nutzer darüber auf.</p>
+        </section>
+        <section class="sec">
+          <h2>Cookies</h2>
+          <p>Cookies sind kleine Dateien, die es ermöglichen, auf dem Zugriffsgerät der Nutzer (PC, Smartphone o.ä.) spezifische, auf das Gerät bezogene Informationen zu speichern. Sie dienen zum einen der Benutzerfreundlichkeit von Webseiten und damit den Nutzern (z.B. Speicherung von Logindaten). Zum anderen dienen sie dazu, statistische Daten der Webseitennutzung zu erfassen und sie zwecks Verbesserung des Angebotes analysieren zu können. Die Nutzer können auf den Einsatz der Cookies Einfluss nehmen. Die meisten Browser verfügen über eine Option, mit der das Speichern von Cookies eingeschränkt oder komplett verhindert wird. Allerdings wird darauf hingewiesen, dass die Nutzung und insbesondere der Nutzungskomfort ohne Cookies eingeschränkt werden.</p>
+        </section>
+        <section class="sec">
+          <h2>Web-Analyse</h2>
+          <p>Dieses Angebot benutzt Google Analytics, einen Webanalysedienst der Google Inc. ("Google"). Google Analytics verwendet sog. "Cookies", Textdateien, die auf Computer der Nutzer gespeichert werden und die eine Analyse der Benutzung der Website durch sie ermöglichen. Die durch den Cookie erzeugten Informationen über die Benutzung dieser Website durch die Nutzer werden in der Regel an einen Server von Google in den USA übertragen und dort gespeichert.</p>
+          <p>Im Falle der Aktivierung der IP-Anonymisierung auf dieser Webseite wird die IP-Adresse der Nutzer von Google jedoch innerhalb von Mitgliedstaaten der Europäischen Union oder in anderen Vertragsstaaten des Abkommens über den Europäischen Wirtschaftsraum zuvor gekürzt. Nur in Ausnahmefällen wird die volle IP-Adresse an einen Server von Google in den USA übertragen und dort gekürzt. Die IP-Anonymisierung ist auf dieser Website aktiv. Im Auftrag des Betreibers dieser Website wird Google diese Informationen benutzen, um die Nutzung der Website durch die Nutzer auszuwerten, um Reports über die Websiteaktivitäten zusammenzustellen und um weitere mit der Websitenutzung und der Internetnutzung verbundene Dienstleistungen gegenüber dem Websitebetreiber zu erbringen.</p>
+          <p>Die im Rahmen von Google Analytics von Ihrem Browser übermittelte IP-Adresse wird nicht mit anderen Daten von Google zusammengeführt. Die Nutzer können die Speicherung der Cookies durch eine entsprechende Einstellung Ihrer Browser-Software verhindern; dieses Angebot weist die Nutzer jedoch darauf hin, dass Sie in diesem Fall gegebenenfalls nicht sämtliche Funktionen dieser Website vollumfänglich werden nutzen können. Die Nutzer können darüber hinaus die Erfassung der durch das Cookie erzeugten und auf ihre Nutzung der Website bezogenen Daten (inkl. Ihrer IP-Adresse) an Google sowie die Verarbeitung dieser Daten durch Google verhindern, indem sie das unter dem folgenden Link verfügbare Browser-Plugin herunterladen und installieren: <a href="https://tools.google.com/dlpage/gaoptout?hl=de" target="_blank" rel="noopener">https://tools.google.com/dlpage/gaoptout?hl=de</a>.</p>
+          <p>Alternativ zum Browser-Add-on oder innerhalb von Browsern auf mobilen Geräten, klicken Sie bitte diesen Link, um die Erfassung durch Google Analytics innerhalb dieser Website zukünftig zu verhindern. Dabei wird ein Opt-Out-Cookie auf Ihrem Gerät abgelegt. Löschen Sie Ihre Cookies, müssen Sie diesen Link erneut klicken.</p>
+        </section>
+        <section class="sec">
+          <h2>Ihre Rechte</h2>
+          <p>Ihnen stehen grundsätzlich die Rechte auf Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit, Widerruf und Widerspruch zu. Wenn Sie glauben, dass die Verarbeitung Ihrer Daten gegen das Datenschutzrecht verstößt oder Ihre datenschutzrechtlichen Ansprüche sonst in einer Weise verletzt worden sind, können Sie sich bei der Österreichischen Datenschutzbehörde, Barichgasse 40-42, 1030 Wien, beschweren.</p>
+        </section>
+      </div>
+      <a class="back" href="index.html">← Zurück zur Startseite</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <svg class="logo" viewBox="0 0 107.761 37.963" role="img" aria-label="LUX®"><use href="#lux"/></svg>
+      <address><strong>Vertrieb / Distributor</strong><br>KP Plattner GmbH<br>Steinbockallee 9, A-6063 Rum<br><a href="mailto:office@kp-plattner.at">office@kp-plattner.at</a></address>
+    </div>
+    <div class="legal">
+      <nav aria-label="Rechtliches"><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></nav>
+      <p class="copy">© LUX® · KP Plattner GmbH</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
