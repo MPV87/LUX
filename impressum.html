@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Impressum | LUX®</title>
+<meta name="robots" content="noindex, follow">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400&family=Lora:wght@400;500&family=Mulish:wght@400;600;700&display=swap">
+<style>
+/* Layout: dunkle Packungsfläche, orange Wellenlinien als Leitmotiv, linksbündige Textspalten mit großzügigem Weißraum */
+:root {
+  --navy: #10223F;        /* Packungs-Navy (aus Vorschau angenähert) */
+  --navy-deep: #0B1830;
+  --navy-line: #22365A;
+  --orange: #F2672A;      /* Packungs-Orange (aus Vorschau angenähert) */
+  --white: #FFFFFF;
+  --mist: #B8C2D6;
+  --paper: #F4F6FA;
+  --paper-2: #DCE2EC;
+  --f-display: "Josefin Sans", "Futura", "Century Gothic", sans-serif;
+  --f-serif: "Lora", Georgia, "Times New Roman", serif;
+  --f-body: "Mulish", "Segoe UI", system-ui, sans-serif;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { margin: 0;
+  background: var(--navy);
+  color: var(--white);
+  font-family: var(--f-body);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding-left: max(24px, env(safe-area-inset-left, 0px));
+  padding-right: max(24px, env(safe-area-inset-right, 0px));
+}
+h1, h2, h3 { text-wrap: balance; margin: 0; }
+p { margin: 0; }
+.eyebrow {
+  font-family: var(--f-serif);
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  font-size: .8125rem;
+  color: var(--mist);
+}
+a { color: inherit; }
+a:focus-visible, .btn:focus-visible { outline: 2px solid var(--orange); outline-offset: 4px; }
+
+/* Kopfzeile */
+.top {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 10;
+  background: color-mix(in srgb, var(--navy) 88%, transparent);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--navy-line);
+}
+.top .wrap { display: flex; align-items: center; justify-content: space-between; padding-block: 16px; }
+.top .logo { width: 64px; color: var(--orange); display: block; }
+.top nav { display: flex; gap: 28px; font-size: .875rem; letter-spacing: .08em; text-transform: uppercase; }
+.top nav a { text-decoration: none; color: var(--mist); }
+.top nav a:hover { color: var(--white); }
+
+
+.top nav a.cta { color: var(--orange); }
+/* Impressum */
+.legal-head { border-bottom: 1px solid var(--navy-line); background: radial-gradient(70% 140% at 85% 120%, color-mix(in srgb, var(--orange) 22%, transparent), transparent 70%); }
+.legal-head .wrap { padding-block: clamp(56px, 9vw, 104px) clamp(40px, 6vw, 64px); display: grid; gap: 14px; }
+.legal-head h1 { font-family: var(--f-display); font-weight: 300; font-size: clamp(2.4rem, 6vw, 4rem); line-height: 1.05; }
+.legal-body .wrap { padding-block: clamp(40px, 6vw, 72px) clamp(64px, 9vw, 112px); display: grid; gap: clamp(40px, 6vw, 56px); }
+.legal-body h2 { font-family: var(--f-serif); font-weight: 400; text-transform: uppercase; letter-spacing: .14em; font-size: .8125rem; color: var(--orange); margin-bottom: 18px; }
+.firm { font-family: var(--f-display); font-weight: 400; font-size: clamp(1.5rem, 3vw, 2rem); line-height: 1.25; }
+.firm span { display: block; font-family: var(--f-body); font-size: 1.0625rem; color: var(--mist); margin-top: 8px; line-height: 1.65; }
+table.facts { width: 100%; max-width: 760px; border-collapse: collapse; }
+table.facts th, table.facts td { text-align: left; vertical-align: top; padding: 14px 0; border-bottom: 1px solid var(--navy-line); }
+table.facts th { width: 38%; padding-right: 24px; font-weight: 600; color: var(--mist); font-size: .9375rem; }
+table.facts td { color: var(--white); }
+table.facts a { text-decoration: none; border-bottom: 1px solid var(--navy-line); }
+table.facts a:hover { border-color: var(--orange); }
+.note { max-width: 46em; color: var(--mist); display: grid; gap: 14px; }
+.note strong { color: var(--white); font-weight: 600; }
+.back { justify-self: start; display: inline-flex; gap: 10px; align-items: center; color: var(--white); text-decoration: none; font-weight: 600; border-bottom: 1px solid var(--orange); padding-bottom: 3px; }
+footer { background: var(--navy-deep); border-top: 1px solid var(--navy-line); font-size: .9375rem; color: var(--mist); }
+footer .wrap { padding-block: 40px; display: flex; flex-wrap: wrap; gap: 24px 48px; justify-content: space-between; align-items: end; }
+footer .logo { width: 72px; color: var(--white); margin-bottom: 14px; }
+footer address { font-style: normal; line-height: 1.6; }
+footer strong { color: var(--white); font-weight: 600; }
+footer .copy { font-size: .8125rem; }
+footer .legal { display: grid; gap: 10px; justify-items: end; }
+footer .legal nav { display: flex; gap: 24px; font-size: .875rem; }
+footer .legal a { color: var(--white); text-decoration: none; border-bottom: 1px solid var(--navy-line); padding-bottom: 2px; }
+footer .legal a:hover { border-color: var(--orange); }
+@media (max-width: 760px) { footer .legal { justify-items: start; } }
+
+
+@media (max-width: 760px) {
+  .top nav { display: none; }
+  table.facts th, table.facts td { display: block; width: auto; padding: 0; border: 0; }
+  table.facts th { padding-top: 14px; font-size: .8125rem; }
+  table.facts td { padding-bottom: 14px; border-bottom: 1px solid var(--navy-line); }
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="lux" viewBox="0 0 107.761 37.963">
+    <path fill="currentColor" d="M 58.246094 0.0234375 L 53.363281 0.0234375 C 53.273438 0.0351562 53.28125 0.140625 53.285156 0.25 C 53.558594 7.121094 53.988281 15.34375 53.136719 21.96875 C 52.296875 28.496094 49.375 33.652344 42.464844 33.84375 C 27.6875 34.253906 30.757812 14.949219 30.816406 0.851562 L 25.929688 0.851562 C 26.09375 9.890625 25.359375 19.351562 27.058594 26.480469 C 28.734375 33.542969 33.492188 38.257812 42.464844 37.828125 C 50.722656 37.429688 55.269531 32.496094 57.042969 25.652344 C 58.890625 18.523438 58.046875 9.152344 58.246094 0.0234375"/>
+    <path fill="currentColor" d="M 97.78125 5.585938 C 98.109375 5.253906 99.523438 4.160156 99.507812 3.855469 C 99.496094 3.582031 98.128906 2.554688 97.78125 2.203125 C 96.96875 1.394531 96.535156 0.785156 95.898438 0.398438 C 91.84375 5.410156 87.699219 10.335938 83.425781 15.128906 C 79.585938 10.25 75.605469 5.511719 71.925781 0.472656 C 70.585938 1.589844 69.285156 2.746094 68.09375 4.007812 C 72.214844 8.75 76.308594 13.527344 80.34375 18.363281 C 75.6875 23.75 71.066406 29.179688 66.363281 34.519531 C 67.511719 35.628906 68.472656 36.917969 69.746094 37.902344 C 74.125 32.335938 78.480469 26.746094 83.046875 21.367188 C 87.527344 26.835938 92.035156 32.269531 96.425781 37.828125 C 97.617188 36.589844 99 35.539062 100.109375 34.21875 C 95.546875 28.761719 90.726562 23.5625 86.128906 18.136719 C 89.632812 14.125 93.84375 9.519531 97.78125 5.585938"/>
+    <path fill="currentColor" d="M 5.5625 0.550781 L 0.300781 0.550781 C 0.214844 0.5625 0.21875 0.667969 0.226562 0.773438 C 0.421875 12.585938 0.785156 25.550781 0 37 C 5.894531 37.117188 11.660156 37.363281 17.511719 37.527344 L 17.511719 33.015625 C 13.507812 33.222656 9.257812 33.179688 5.109375 33.242188 C 5.171875 22.253906 4.910156 10.945312 5.5625 0.550781"/>
+    <path fill="currentColor" d="M 102.4375 2.351562 C 102.566406 1.621094 103.257812 0.851562 104.242188 0.625 C 105.464844 0.339844 106.890625 1.277344 107.023438 2.578125 C 107.367188 5.988281 101.804688 5.988281 102.4375 2.351562 M 104.167969 0.175781 C 102.996094 0.402344 102.34375 1.234375 102.140625 1.75 C 101.5 3.390625 102.410156 4.691406 103.039062 5.132812 C 105.042969 6.542969 107.933594 4.863281 107.472656 2.277344 C 107.25 1.027344 105.863281 -0.15625 104.167969 0.175781"/>
+    <path fill="currentColor" d="M 104.019531 2.730469 L 104.019531 1.828125 C 104.640625 1.832031 105.386719 1.710938 105.296875 2.429688 C 105.070312 2.730469 104.527344 2.710938 104.019531 2.730469 M 105.671875 1.675781 C 105.199219 1.320312 104.324219 1.371094 103.492188 1.375 L 103.492188 4.382812 L 104.019531 4.382812 C 104.066406 3.980469 103.917969 3.382812 104.09375 3.105469 C 105.242188 3.007812 104.792969 4.511719 105.972656 4.382812 C 105.765625 3.835938 105.417969 3.433594 105.070312 3.03125 C 105.726562 3.015625 105.988281 2.21875 105.671875 1.675781"/>
+  </symbol>
+</svg>
+
+<header class="top">
+  <div class="wrap">
+    <a href="index.html" aria-label="LUX® – zur Startseite"><svg class="logo" viewBox="0 0 107.761 37.963" role="img" aria-label="LUX®"><use href="#lux"/></svg></a>
+    <nav aria-label="Seitennavigation">
+      <a href="index.html#marke">Marke</a>
+      <a href="index.html#sortiment">Sortiment</a>
+      <a class="cta" href="index.html#haendler">Händler werden</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="legal-head">
+    <div class="wrap">
+      <p class="eyebrow">Rechtliches</p>
+      <h1>Impressum</h1>
+    </div>
+  </section>
+
+  <section class="legal-body">
+    <div class="wrap">
+      <div>
+        <h2>Anbieter</h2>
+        <p class="firm">KP Plattner GmbH<span>Steinbockallee 9<br>A-6063 Innsbruck</span></p>
+      </div>
+
+      <div>
+        <h2>Kontakt</h2>
+        <table class="facts">
+          <tr><th scope="row">Telefon</th><td><a href="tel:+43512264064">+43 512 264 064</a></td></tr>
+          <tr><th scope="row">Fax</th><td>+43 512 266 494</td></tr>
+          <tr><th scope="row">E-Mail</th><td><a href="mailto:office@kp-plattner.at">office@kp-plattner.at</a></td></tr>
+        </table>
+      </div>
+
+      <div>
+        <h2>Unternehmensdaten</h2>
+        <table class="facts">
+          <tr><th scope="row">Unternehmensgegenstand</th><td>Groß- und Einzelhandel mit Raucherbedarfsartikeln, Werbegeschenken und Zubehör.</td></tr>
+          <tr><th scope="row">UID-Nummer</th><td>ATU72442216</td></tr>
+          <tr><th scope="row">Firmenbuchnummer</th><td>FN 474216b</td></tr>
+          <tr><th scope="row">Firmenbuchgericht</th><td>Landesgericht Innsbruck</td></tr>
+          <tr><th scope="row">Geschäftsführer</th><td>Mag. Philipp Plattner</td></tr>
+          <tr><th scope="row">Kammerzugehörigkeit</th><td>Wirtschaftskammer Tirol</td></tr>
+          <tr><th scope="row">Medieninhaber</th><td>KP Plattner GmbH</td></tr>
+          <tr><th scope="row">Blattlinie</th><td>Diese Website dient der Information über die Produkte und Dienstleistungen der KP-Plattner GmbH.</td></tr>
+          <tr><th scope="row">Bildquellen</th><td>Eigene Fotografien sowie KI-unterstützt erstellte bzw. bearbeitete Bilder unter Verwendung von Magnific AI.</td></tr>
+        </table>
+      </div>
+
+      <div class="note">
+        <h2>Marke</h2>
+        <p><strong>LUX®</strong> ist eine eingetragene Marke der KP Plattner GmbH.</p>
+        <p>Informationen gemäß § 5 E-Commerce-Gesetz (ECG), § 14 Unternehmensgesetzbuch (UGB), § 63 Gewerbeordnung (GewO) und § 25 Mediengesetz (MedienG).</p>
+        <p>© KP Plattner GmbH. Alle Rechte vorbehalten.</p>
+      </div>
+
+      <a class="back" href="index.html">← Zurück zur Startseite</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <svg class="logo" viewBox="0 0 107.761 37.963" role="img" aria-label="LUX®"><use href="#lux"/></svg>
+      <address><strong>Vertrieb / Distributor</strong><br>KP Plattner GmbH<br>Steinbockallee 9, A-6063 Rum<br>office@kp-plattner.at</address>
+    </div>
+    <div class="legal">
+      <nav aria-label="Rechtliches"><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></nav>
+      <p class="copy">© LUX® · KP Plattner GmbH</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
