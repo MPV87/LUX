@@ -242,6 +242,7 @@ section.block .wrap { padding-block: clamp(72px, 10vw, 120px); }
 .more { margin-top: clamp(56px, 8vw, 96px); display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 24px 48px; align-items: center; padding: clamp(24px, 4vw, 40px); border: 1px dashed color-mix(in srgb, var(--orange) 60%, transparent); border-radius: 10px; }
 .more h3 { font-family: var(--f-display); font-weight: 300; font-size: clamp(1.5rem, 2.8vw, 2rem); line-height: 1.15; }
 .more p { color: var(--mist); max-width: 40em; margin-top: 10px; }
+.more p a { color: var(--white); text-decoration: none; border-bottom: 1px solid var(--orange); }
 .more .contact { display: grid; gap: 6px; font-size: .9375rem; color: var(--mist); }
 .more .contact span a { color: var(--white); text-decoration: none; }
 .more .contact a:not(.btn) { color: var(--white); text-decoration: none; border-bottom: 1px solid var(--orange); justify-self: start; padding-bottom: 2px; }
@@ -441,14 +442,26 @@ footer .legal a:hover { border-color: var(--orange); }
             <p>Auch im Bereich rund ums Selberdrehen und Stopfen ist LUX® vertreten. Aktuell werden beispielsweise LUX Hülsen in unterschiedlichen Packungsgrößen angeboten.</p>
           </div>
         </article>
+        <article class="show">
+          <div class="stage">
+            <p class="ghost" aria-hidden="true">Nachfüllen</p>
+            <span class="floor" aria-hidden="true"></span>
+            <img src="lux-benzin.webp" alt="LUX Feuerzeugbenzin, 133 ml Dose" loading="lazy" style="--x:28%;--y:9%;--w:25%;--r:-4deg;--d:-0s"><img class="front" src="lux-gas.webp" alt="LUX Turbo Gas, 90 ml Dose" loading="lazy" style="--x:57%;--y:9%;--w:14%;--r:5deg;--d:-2.4s">
+          </div>
+          <div class="copy">
+            <p class="tag">Nachfüllen</p>
+            <h3>Feuerzeugbenzin &amp; Gas</h3>
+            <p>Zum Nachfüllen gibt es LUX® Feuerzeugbenzin und LUX® Turbo Gas. Das Feuerzeugbenzin in der 133-ml-Dose ist für alle Benzinfeuerzeuge geeignet, das Turbo Gas in der 90-ml-Dose speziell für Turbo- und Jet-Flame-Feuerzeuge.</p>
+          </div>
+        </article>
       </div>
       <aside class="more" aria-label="Weitere Artikel">
         <div>
           <h3>Nur ein kleiner Auszug.</h3>
-          <p>Was hier zu sehen ist, ist nur ein kleiner Auszug aus dem kompletten LUX® Sortiment. Laufend kommen neue Artikel dazu. Das aktuelle Gesamtsortiment kann bei der KP Plattner GmbH angefragt werden.</p>
+          <p>Was hier zu sehen ist, ist nur ein kleiner Auszug aus dem kompletten LUX® Sortiment. Laufend kommen neue Artikel dazu. Das gesamte Sortiment finden Sie im Shop der KP Plattner GmbH. Bitte beachten Sie: Verkauft wird ausschließlich an Händler, nicht an Privatpersonen. Noch kein Händler? <a href="#haendler">Hier anmelden</a>.</p>
         </div>
         <div class="contact">
-          <a class="btn ghost" href="mailto:office@kp-plattner.at?subject=Anfrage%20LUX%C2%AE%20Sortiment" >Sortiment anfragen</a>
+          <a class="btn ghost" href="https://www.kp-plattner.at/search/index?query_string=LUX" target="_blank" rel="noopener">LUX Komplettsortiment bei KP Plattner ansehen</a>
           <span><a href="mailto:office@kp-plattner.at">office@kp-plattner.at</a> · <a href="tel:+43512264064">+43 512 264 064</a></span>
         </div>
       </aside>
@@ -552,7 +565,7 @@ footer .legal a:hover { border-color: var(--orange); }
     </div>
     <div class="legal">
       <nav aria-label="Rechtliches"><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></nav>
-      <p class="copy">© LUX® · KP Plattner GmbH</p>
+      <p class="copy">© LUX® · <a href="https://www.kp-plattner.at" target="_blank" rel="noopener">KP Plattner GmbH</a></p>
     </div>
   </div>
 </footer>
