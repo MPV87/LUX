@@ -7,9 +7,13 @@
 <meta name="robots" content="noindex, follow">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="favicon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400&family=Lora:wght@400;500&family=Mulish:wght@400;600;700&display=swap">
+<link rel="preload" href="fonts/mulish-latin.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="fonts/josefin-sans-latin.woff" as="font" type="font/woff" crossorigin>
+<style>
+@font-face { font-family: "Josefin Sans"; src: url("fonts/josefin-sans-latin.woff") format("woff"); font-weight: 200 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Lora"; src: url("fonts/lora-latin.woff") format("woff"); font-weight: 400 500; font-style: normal; font-display: swap; }
+@font-face { font-family: "Mulish"; src: url("fonts/mulish-latin.woff") format("woff"); font-weight: 400 700; font-style: normal; font-display: swap; }
+</style>
 <style>
 /* Layout: dunkle Packungsfläche, orange Wellenlinien als Leitmotiv, linksbündige Textspalten mit großzügigem Weißraum */
 :root {
@@ -193,12 +197,8 @@ footer .legal a:hover { border-color: var(--orange); }
           <p>Es kann vorkommen, dass innerhalb dieses Onlineangebotes Inhalte Dritter, wie z.B. Videos von YouTube, Kartenmaterial von Google Maps, RSS-Feeds oder Grafiken von anderen Webseiten eingebunden werden. Dies setzt immer voraus, dass die Anbieter dieser Inhalte (nachfolgend bezeichnet als "Dritt-Anbieter") die IP-Adresse der Nutzer wahrnehmen. Denn ohne die IP-Adresse könnten sie die Inhalte nicht an den Browser des jeweiligen Nutzers senden. Die IP-Adresse ist damit für die Darstellung dieser Inhalte erforderlich. Wir bemühen uns, nur solche Inhalte zu verwenden, deren jeweilige Anbieter die IP-Adresse lediglich zur Auslieferung der Inhalte verwenden. Jedoch haben wir keinen Einfluss darauf, falls die Dritt-Anbieter die IP-Adresse z.B. für statistische Zwecke speichern. Soweit dies uns bekannt ist, klären wir die Nutzer darüber auf.</p>
         </section>
         <section class="sec">
-          <h2>Google Fonts</h2>
-          <p>Diese Website verwendet zur einheitlichen Darstellung von Schriftarten sogenannte Web Fonts, die von Google bereitgestellt werden (Google Fonts). Anbieter ist für Nutzer im Europäischen Wirtschaftsraum die Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland ("Google").</p>
-          <p>Beim Aufruf einer Seite lädt Ihr Browser die benötigten Schriftarten direkt von Servern von Google (fonts.googleapis.com und fonts.gstatic.com). Dazu baut Ihr Browser eine Verbindung zu diesen Servern auf. Dabei wird Google insbesondere Ihre IP-Adresse übermittelt sowie die Information, dass diese Website aufgerufen wurde. Ohne die Übermittlung der IP-Adresse können die Schriftarten nicht an Ihren Browser ausgeliefert werden.</p>
-          <p>Die Nutzung von Google Fonts erfolgt im Interesse einer einheitlichen und ansprechenden Darstellung dieser Website. Dies stellt ein berechtigtes Interesse im Sinne von Art 6 Abs 1 lit f DSGVO dar.</p>
-          <p>Es kann nicht ausgeschlossen werden, dass Daten auch an die Google LLC in den USA übermittelt werden. Die Google LLC ist nach dem EU-US-Datenschutzrahmen (EU-U.S. Data Privacy Framework) zertifiziert, auf dessen Grundlage die Europäische Kommission ein angemessenes Datenschutzniveau festgestellt hat.</p>
-          <p>Wenn Ihr Browser Web Fonts nicht unterstützt oder deren Laden blockiert, wird eine Standardschrift Ihres Geräts verwendet. Weitere Informationen zu Google Fonts finden Sie unter <a href="https://developers.google.com/fonts/faq/privacy" target="_blank" rel="noopener">https://developers.google.com/fonts/faq/privacy</a> und in der Datenschutzerklärung von Google: <a href="https://policies.google.com/privacy?hl=de" target="_blank" rel="noopener">https://policies.google.com/privacy?hl=de</a>.</p>
+          <h2>Schriftarten</h2>
+          <p>Diese Website verwendet zur einheitlichen Darstellung die Schriftarten Josefin Sans, Lora und Mulish. Die Schriftdateien sind lokal auf dem Server dieser Website gespeichert und werden von dort ausgeliefert. Beim Laden der Schriftarten wird keine Verbindung zu Servern Dritter, insbesondere nicht zu Google, hergestellt.</p>
         </section>
         <section class="sec">
           <h2>Cookies</h2>
